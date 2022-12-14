@@ -136,7 +136,7 @@ class App extends React.Component {
           {provided => (
             <Container
               {...provided.droppableProps}
-              innerRef={provided.innerRef}
+              ref={provided.innerRef}
             >
               {this.state.columnOrder.map((columnId, index) => {
                 const column = this.state.columns[columnId];
@@ -158,8 +158,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+ReactDOM.render(<App />, document.getElementById('root'));
